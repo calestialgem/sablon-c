@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2022 Cem Geçgel <gecgelcem@outlook.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+cmake_minimum_required(VERSION 3.12)
+
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED True)
+
+function(setup_target target)
+    target_include_directories(${target} PRIVATE ${PROJECT_SOURCE_DIR}/src)
+
+    # Enable all warnings.
+    if(MSVC)
+        target_compile_options(${target} PRIVATE /Wall)
+    else(MSVC)
+        target_compile_options(${target} PRIVATE
+            -Wall
+            -Wextra
+            -Wpedantic
+            -Wno-pragma-once-outside-header
+        )
+    endif(MSVC)
+endfunction(setup_target target)
+
+project(sablon)
+
+add_executable(${PROJECT_NAME} src/main.c)
+setup_target(${PROJECT_NAME})
+
+# Create compile commands for the header files as well.
+add_library(headers OBJECT
+    src/lib.c
+)
+setup_target(headers)
