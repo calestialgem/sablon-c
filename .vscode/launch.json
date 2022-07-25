@@ -10,7 +10,7 @@
             "name": "(Linux) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/sablon",
+            "program": "${workspaceFolder}/build/debug",
             "args": [
                 "dummy"
             ],
@@ -25,7 +25,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/sablon.exe",
+            "program": "${workspaceFolder}/build/debug.exe",
             "args": [
                 "dummy"
             ],
