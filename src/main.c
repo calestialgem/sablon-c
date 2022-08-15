@@ -7,8 +7,7 @@
 #include <stdlib.h>
 
 /* Start the program. */
-int main(int argumentCount, char const* const* arguments)
-{
+int main(int argumentCount, char const* const* arguments) {
     // Print the arguments.
     printf("Running with arguments:\n");
     for (int i = 0; i < argumentCount; i++) {

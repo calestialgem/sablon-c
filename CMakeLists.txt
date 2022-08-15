@@ -26,7 +26,6 @@ function(setup_target target)
             -Wall
             -Wextra
             -Wpedantic
-            -Wno-pragma-once-outside-header
         )
     endif(MSVC)
 endfunction(setup_target target)
